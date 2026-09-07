@@ -1,0 +1,98 @@
+/* ==========================================
+   PALETA DE CORES COMPLETA
+   Primary: #0C0F42
+   Accent: #B169FA
+   Dark Neutral: #343636
+   Light Text: #F4F2FF
+   Background: #080804
+   ========================================== */
+
+/* Fundo Geral da Página */
+body {
+  background-color: #080804;
+  color: #F4F2FF;
+  font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho (#0C0F42 e texto #F4F2FF) */
+header {
+  background-color: #0C0F42 !important;
+  color: #F4F2FF !important;
+  padding: 20px 0;
+  border-bottom: 3px solid #B169FA;
+}
+
+header a {
+  color: #F4F2FF !important;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #B169FA !important;
+}
+
+/* Rodapé (#0C0F42 e texto #F4F2FF) */
+footer {
+  background-color: #0C0F42 !important;
+  color: #F4F2FF !important;
+  padding: 20px 0;
+  border-top: 3px solid #B169FA;
+}
+
+footer a {
+  color: #F4F2FF !important;
+}
+
+/* ==========================================
+   CARROSSEL OTIMIZADO
+   ========================================== */
+
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #343636;
+}
+.evento-link {
+  text-decoration: none;
+  color: #F4F2FF;
+}
+
+.evento-card {
+  background-color: #343636;
+  border: 1px solid #0C0F42;
+  transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse por cima do link/card */
+.evento-link:hover .evento-card {
+  transform: translateY(-5px);
+  border-color: #B169FA;
+  box-shadow: 0 4px 15px rgba(177, 105, 250, 0.3);
+}
+/* ==========================================
+   SEÇÃO DO CRONÔMETRO
+   ========================================== */
+
+.timer-section {
+  background-color: #343636;
+  color: #F4F2FF;
+  border: 2px solid #B169FA;
+}
+
+#timer div {
+  background-color: #0C0F42;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 80px;
+  color: #B169FA;
+}

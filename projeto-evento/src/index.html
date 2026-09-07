@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeekEvents</title>
+  
+  <!-- CSS do Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="m-0">GeekEvents</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">BGS</a>
+        <a href="about.html">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-5">
+
+    <div class="text-center mb-4">
+      <h2 style="color: #B169FA;">Destaque do Ano: Brasil Game Show</h2>
+      <p>O maior evento de games da América Latina está chegando!</p>
+    </div>
+
+    <section id="destaque-bgs" class="carousel-container mb-5">
+      <div id="carrosselBGS" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://s3.amazonaws.com/www.ubes.org.br/ubesnovo/wp-content/uploads/2024/09/06203409/bgs-720x480.png" class="d-block w-100" alt="Destaque BGS 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://eu-central-1-gamescom.graphassets.com/AMwDHZTUSMaIlRlMFLL7Qz/quality=value:95/resize=w:960,h:540,fit:crop/sharpen=amount:1/auto_image/uvbwNazbSqKRO4J9znnq" class="d-block w-100" alt="Destaque BGS 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://gkpb.com.br/wp-content/uploads/2023/07/banner-anime-friends.jpg" class="d-block w-100" alt="Destaque BGS 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselBGS" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselBGS" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="timer-section text-center p-4 rounded mb-5">
+      <h2>Contagem Regressiva para a BGS</h2>
+      <div id="timer" class="d-flex justify-content-center gap-3 my-3 fs-3 fw-bold">
+        <div><span id="dias">00</span><p class="fs-6">Dias</p></div>
+        <div><span id="horas">00</span><p class="fs-6">Horas</p></div>
+        <div><span id="minutos">00</span><p class="fs-6">Minutos</p></div>
+        <div><span id="segundos">00</span><p class="fs-6">Segundos</p></div>
+      </div>
+    </section>
+
+   <section id="outros-eventos" class="mb-5">
+      <h3 class="mb-4 text-center" style="color: #B169FA;">Outros Eventos no Radar</h3>
+      <div class="row g-4">
+        
+        <!-- Card CCXP -->
+        <div class="col-md-4">
+          <a href="https://www.ccxp.com.br" target="_blank" class="evento-link">
+            <div class="evento-card p-4 rounded text-center h-100">
+              <h4 style="color: #B169FA;">CCXP</h4>
+              <p class="m-0">A maior experiência épica da cultura pop.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card Anime Friends -->
+        <div class="col-md-4">
+          <a href="https://animefriends.com.br" target="_blank" class="evento-link">
+            <div class="evento-card p-4 rounded text-center h-100">
+              <h4 style="color: #B169FA;">Anime Friends</h4>
+              <p class="m-0">O ponto de encontro dos fãs de animes e mangás.</p>
+            </div>
+          </a>
+        </div>
+
+        
+        <div class="col-md-4">
+          <a href="https://www.gamescom.global/en" target="_blank" class="evento-link">
+            <div class="evento-card p-4 rounded text-center h-100">
+              <h4 style="color: #B169FA;">Gamescom</h4>
+              <p class="m-0">Cultura dos games e cultura geek.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p class="m-0">&copy; 2026 - GeekEvents. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lógica do Cronômetro BGS -->
+  <script>
+   const formatarDigito = (digito) => `0${digito}`.slice(-2);
+const atualizar = (tempo) => {
+    const segundos = document.getElementById('segundos');
+    const minutos = document.getElementById('minutos');
+    const horas = document.getElementById('horas');
+    const dias = document.getElementById('dias');
+    const qtdSegundos = tempo % 60;
+    const qtdMinutos = Math.floor((tempo % (60 * 60)) / 60);
+    const qtdHoras = Math.floor((tempo % (60 * 60 * 24)) / (60 * 60));
+    const qtdDias = Math.floor(tempo / (60 * 60 * 24));
+    segundos.textContent = formatarDigito(qtdSegundos);
+    minutos.textContent = formatarDigito(qtdMinutos);
+    horas.textContent = formatarDigito(qtdHoras);
+    dias.textContent = formatarDigito(qtdDias);
+};
+const contagemRegressiva = (tempo) => {
+    const pararContagem = () => clearInterval(id);
+    const contar = () => {
+        if (tempo <= 0) {
+            atualizar(0);
+            pararContagem();
+            return;
+        }
+        atualizar(tempo);
+        tempo--;
+    };
+    const id = setInterval(contar, 1000);
+};
+const tempoRestante = () => {
+    const dataEvento = new Date('2026-10-09 12:00:00');
+    const hoje = Date.now();
+
+    return Math.floor((dataEvento - hoje) / 1000);
+};
+const elementoContador = document.getElementById('dias');
+if (elementoContador) {
+    contagemRegressiva(tempoRestante());
+}
+  </script>
+</body>
+</html>
